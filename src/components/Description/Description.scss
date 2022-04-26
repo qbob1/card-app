@@ -1,0 +1,23 @@
+@import '../../styles/vars';
+
+.desc {
+    max-width: 900px;
+    font-size: 14px;
+    line-height: 1.5;
+
+    &__btn {
+        background-color: unset;
+        border: none;
+        font-size: 14px;
+        font-weight: 500;
+        color: $blue;
+        font-style: italic;
+        transition: all .15s;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            color: $gray;
+        }
+    }
+}

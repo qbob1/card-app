@@ -1,0 +1,292 @@
+@import '../../styles/vars';
+
+.card {
+    margin: 20px 0;
+    padding: 20px;
+    box-shadow: 0 1.5em 2em -0.5em rgb(0 0 0 / 10%);
+    border-radius: 6px;
+
+    &__title {
+        font-size: 30px;
+        font-weight: 900;
+
+        animation: fromLeft .5s forwards;
+
+        &_compressed {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__subtitle {
+        color: $gray;
+        font-size: 14px;
+        font-weight: 900;
+        margin-bottom: 30px;
+
+        animation: fromBottom .5s forwards;
+    }
+
+    &__content {
+        display: flex;
+        padding:1em;
+        @media (max-width: 500px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &_compressed {
+            @media (max-width: 1024px) {
+                flex-direction: row;
+            }
+
+            @media (max-width: 768px) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__info {
+        animation: fromRight .5s forwards;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        &_compressed {
+            flex-grow: 1;
+        }
+        svg{
+            transform:scale(2);
+        }
+    }
+
+    &__location {
+        max-width: 60%;
+        width: 100%;
+        margin-right: 60px;
+        position: relative;
+
+        animation: fromLeft .5s forwards;
+
+        @media (max-width: 768px) {
+            max-width: unset;
+            margin-right: 0;
+            margin-bottom: 30px;
+        }
+
+        &_compressed {
+            @media (max-width: 1024px) {
+                max-width: unset;
+                margin-right: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 4px;
+        }
+    }
+
+    &__related {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -10px;
+        width: calc(100% + 20px);
+        margin-bottom: 30px;
+        animation: fromBottom .5s forwards;
+
+        &-item {
+            font-size: 18px;
+            padding: 5px 10px;
+            font-weight: 500;
+            color: $blue;
+            cursor: pointer;
+
+            @media (max-width: 500px) {
+                font-size: 14px;
+            }
+
+            &:hover {
+                color: $gray;
+            }
+        }
+    }
+
+    &__keywords {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -5px;
+        width: calc(100% + 10px);
+        margin-bottom: 30px;
+
+        &-wrap {
+            animation: fromBottom .5s forwards;
+        }
+
+        &_compressed {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-row-gap: 10px;
+            grid-column-gap: 10px;
+            margin-left: 0;
+            margin-bottom: 0;
+            width: 50%;
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (max-width: 500px) {
+                width: 100%;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (max-width: 400px) {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        &-item {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 5px;
+            display: inline-flex;
+
+            span {
+                &:first-child {
+                    padding: 5px 7px;
+                    background-color: $blue;
+                    color: $white;
+                    border-bottom-left-radius: 4px;
+                    border-top-left-radius: 4px;
+                    display: block;
+                    height: 100%;
+                }
+
+                &:last-child {
+                    padding-left: 10px;
+                    padding-right: 15px;
+                    border-bottom-right-radius: 4px;
+                    border-top-right-radius: 4px;
+                    background-color: $white;
+                    color: $blue;
+                    border: 1px solid $blue;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            &_compressed {
+                display: flex;
+                width: 100%;
+                margin: 0;
+
+                span {
+                    &:last-child {
+                        width: 100%;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    &__section-name {
+        font-size: 24px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 13px;
+            right: calc(100% + 10px);
+            height: 1px;
+            width: 15px;
+            background-color: rgba($blue, .5);
+
+            @media (max-width: 1024px) {
+                right: calc(100% + 5px);
+                width: 10px;
+            }
+        }
+
+        img {
+            display: block;
+            width: 20px;
+            height: 20px;
+            margin-left: 15px;
+        }
+    }
+
+    &__short-desc {
+        line-height: 1.5;
+    }
+
+    &__stats {
+        margin-bottom: 50px;
+        animation: fromBottom .5s forwards;
+
+        &-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            &_compressed {
+                grid-template-columns: 1fr;
+                grid-row-gap: 10px;
+            }
+
+            @media (max-width: 768px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    @keyframes fromLeft {
+        0% {
+            opacity: 0;
+            transform: translateX(-50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fromRight {
+        0% {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes fromBottom {
+        0% {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    @media (min-width: 768px) {
+        max-width: 45%;
+    }
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+    }
+}
