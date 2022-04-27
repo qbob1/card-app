@@ -5,7 +5,9 @@
     padding: 20px;
     box-shadow: 0 1.5em 2em -0.5em rgb(0 0 0 / 10%);
     border-radius: 6px;
-
+    min-width: 500px;
+    width: 60vw;
+    
     &__title {
         font-size: 30px;
         font-weight: 900;

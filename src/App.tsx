@@ -59,7 +59,9 @@ class App extends React.Component {
                 creation_year: 1992,
                 country_of_origin: "Netherlands",
                 od_estimated_yield: "",
-                cbd_content: ""
+                cbd_content: "",
+                scale: 1500,
+                center: [0, 50]
             },
             {
                 id: 103,
@@ -94,7 +96,9 @@ class App extends React.Component {
                 creation_year: "",
                 country_of_origin: "Canada",
                 od_estimated_yield: 16,
-                cbd_content: ""
+                cbd_content: "",
+                scale: 400,
+                center: [-100, 80]
             },
             {
                 id: 1036,
@@ -129,7 +133,9 @@ class App extends React.Component {
                 creation_year: "",
                 country_of_origin: "United States",
                 od_estimated_yield: "",
-                cbd_content: ""
+                cbd_content: "",
+                scale: 400,
+                center: [-120, 60]
             }
         ]
     }
