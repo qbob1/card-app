@@ -5,7 +5,6 @@ import {
     ComposableMap,
     Geographies,
     Geography,
-    Marker
 } from "react-simple-maps";
 // Styles
 import './Card.scss'
@@ -134,7 +133,8 @@ const Card = ({ data }) => {
                         <ComposableMap
                             projection="geoEquirectangular"
                             projectionConfig={{
-                                scale: 100
+                                scale: data.scale,
+                                center: data.center
                             }}
                         >
                             <Geographies geography={geo}>
